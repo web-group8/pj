@@ -12,6 +12,7 @@ import { HeaderComponent } from './header/header.component';
 import { GuideComponent } from './guide/guide.component';
 import { StartComponent } from './start/start.component';
 import { SuccessComponent } from './success/success.component';
+import { QuickStartComponent } from './quick-start/quick-start.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { SuccessComponent } from './success/success.component';
     HeaderComponent,
     GuideComponent,
     StartComponent,
-    SuccessComponent
+    SuccessComponent,
+    QuickStartComponent
   ],
   imports: [
       HttpModule,
@@ -34,7 +36,8 @@ import { SuccessComponent } from './success/success.component';
         { path: 'guidepage', component: GuideComponent },
         { path: 'successpage', component:  SuccessComponent },
         { path: 'registpage', component:  RegistComponent },
-        { path: 'loginpage', component:   LoginComponent }
+        { path: 'loginpage', component:   LoginComponent },
+        { path: 'quickStart', component: QuickStartComponent }
     ])
   ],
   providers: [],
