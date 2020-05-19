@@ -2,12 +2,26 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>用户注册</title>
+  <link rel="stylesheet">
 </head>
 <body>
-<form action="/regist" method="post">
-  用户名:<input name="username" type="text"/><br>
-  密码:<input name="password" type="password"> <br>
-  <input type="submit" value="注册">
-</form>
+<div class="box">
+  <h2>Regist</h2>
+
+    <div class="inputbox">
+      <input  type="text" [(ngModel)]="username">
+      <label>Username</label>
+    </div>
+    <div class="inputbox">
+      <input  type="password" [(ngModel)]="password">
+      <label>Password</label>
+    </div>
+    <div class="inputbox">
+      <input  type="text" [(ngModel)]="email">
+      <label>Email</label>
+    </div>
+    <button (click)="regist()">注册</button>
+
+</div>
 </body>
+</html>

@@ -7,10 +7,11 @@ import { Http,Jsonp,Headers} from '@angular/http';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+    login=false;
   constructor() { }
 
   ngOnInit(): void {
+      this.login=Boolean(localStorage.getItem("login"));
   }
   checkout(){
     alert("成功退出登录");

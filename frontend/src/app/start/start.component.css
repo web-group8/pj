@@ -6,8 +6,13 @@
 /*}*/
 
 
-button{
+div{
     margin-left:800px;
-    margin-top:400px;
-    background-color:red;
+    margin-top:300px;
+}
+h1{
+    text-align:center
+}
+button{
+    margin-left:50%;
 }

@@ -1,5 +1,10 @@
 <div>
-<button *ngIf="login==false" [routerLink]="['/guidepage']">游玩</button>
-<button *ngIf="login==true" [routerLink]="['/successpage']">游玩</button>
+
+    <h1> Learning Computational Thinking</h1>
+    <br>
+   <h2>&nbsp; &nbsp; 基于 Google Blockly 的计算思维训练平台。结合 Google Blockly强大的功能打破编程语言的边界，无需学习编程语言就可进行计算思维的训练，为初入编程大门的人提供一个易于学习的平台。</h2>
+
+<button *ngIf="login==false" [routerLink]="['/loginpage']">开始游玩</button>
+<button *ngIf="login==true" [routerLink]="['/successpage']">开始游玩</button>
 </div>
 <!--<img src="../../assets/1.jpg">-->
