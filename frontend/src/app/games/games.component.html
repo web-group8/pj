@@ -1,0 +1,16 @@
+<table class = "list">
+  <tr>
+    <th>关卡序号</th>
+    <th>游戏名称</th>
+    <th>游戏类型</th>
+    <th>难度</th>
+  </tr>
+  <tr *ngFor="let game of games; index as gameId" [routerLink]="['/gamesList',gameId]" [title] = "game.name">
+    <td>{{game.id}}</td>
+    <td>{{game.name}}</td>
+    <td>{{game.type}}</td>
+    <td>{{game.difficulty}}</td>
+  </tr>
+</table>
+
+

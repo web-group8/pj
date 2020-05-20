@@ -13,6 +13,8 @@ import { GuideComponent } from './guide/guide.component';
 import { StartComponent } from './start/start.component';
 import { SuccessComponent } from './success/success.component';
 import { QuickStartComponent } from './quick-start/quick-start.component';
+import { GamesComponent } from './games/games.component';
+import { GameDetailsComponent } from './games/game-details/game-details.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { QuickStartComponent } from './quick-start/quick-start.component';
     GuideComponent,
     StartComponent,
     SuccessComponent,
-    QuickStartComponent
+    QuickStartComponent,
+    GamesComponent,
+    GameDetailsComponent
   ],
   imports: [
       HttpModule,
@@ -37,7 +41,9 @@ import { QuickStartComponent } from './quick-start/quick-start.component';
         { path: 'successpage', component:  SuccessComponent },
         { path: 'registpage', component:  RegistComponent },
         { path: 'loginpage', component:   LoginComponent },
-        { path: 'quickStart', component: QuickStartComponent }
+        { path: 'quickStart', component: QuickStartComponent },
+        { path: 'gamesList', component: GamesComponent },
+        { path: 'gamesList/:gameId', component: GameDetailsComponent }
     ])
   ],
   providers: [],

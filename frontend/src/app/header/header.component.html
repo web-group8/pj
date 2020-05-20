@@ -3,7 +3,7 @@
 </a>
 <div style="width:800px">
   <a  [routerLink]="['/']"  class="button fancy-button" style="margin-right:50px"><i class="material-icons">shopping_cart</i>主页</a>
-  <a  class="button fancy-button" style="margin-right:50px"><i class="material-icons">shopping_cart</i>进入游戏</a>
+  <a  [routerLink]="['/gamesList']" class="button fancy-button" style="margin-right:50px"><i class="material-icons">shopping_cart</i>进入游戏</a>
   <a  class="button fancy-button" style="margin-right:50px" [routerLink]="['/quickStart']"><i class="material-icons">shopping_cart</i>新手教程</a>
 
   <a  *ngIf="login==true" class="button fancy-button" style="margin-right:50px"><i class="material-icons">shopping_cart</i>个人信息</a>

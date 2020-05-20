@@ -1,0 +1,19 @@
+table{
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 10px;
+    height: 15px;
+    width: 700px;
+    text-align: center;
+    font-family: Roboto,"Helvetica Neue",sans-serif;
+    margin-left: 80%;
+    margin-top: 25%;
+
+}
+
+tr{
+    height: 50px;
+}
+td{
+    border-top: #eeeeee solid 2px;
+}
