@@ -1,0 +1,58 @@
+
+
+<div class="body" >
+
+<div class="left-div"></div>
+
+<div class="right-div">
+    <div class="nav">
+        <a (click)="setStepNum('1')">个人信息</a>
+        <a (click)="setStepNum('2')">游玩情况</a>
+        <a (click)="setStepNum('3')">历史操作</a>
+    </div>
+
+    <div *ngIf="stepNum=='1'">
+       <div class="list1" *ngFor="let account of accounts " [title] = "account.name">
+           <ul>
+               <img style="display: inline;margin-right: 10px" src="../../assets/personal/icon-psnl-1.JPG">
+               <h2 style="color: black;display:inline">用户名：{{account.name}}</h2>
+               <li>注册时间：{{account.rgstime}}</li>
+               <li>注册邮箱：{{account.email}}</li>
+           </ul>
+       </div>
+    </div>
+
+    <div *ngIf="stepNum=='2'">
+        <p>游戏进度面板</p>
+        <table class = "list">
+            <tr>
+                <th>No</th>
+                <th>设计模式</th>
+                <th>进度</th>
+            </tr>
+            <tr *ngFor="let gameload of gameloads" [title] = "gameload.name">
+                <td>{{gameload.id}}</td>
+                <td>{{gameload.name}}</td>
+                <td>{{gameload.finish}}</td>
+            </tr>
+        </table>
+    </div>
+
+    <div *ngIf="stepNum=='3'">
+        <table class = "list">
+            <tr>
+                <th>游戏名</th>
+                <th>时间</th>
+                <th>是否通过</th>
+            </tr>
+            <tr *ngFor="let gamerecord of gamerecords" [title] = "gamerecord.name">
+                <td>{{gamerecord.name}}</td>
+                <td>{{gamerecord.playtime}}</td>
+                <td>{{gamerecord.pass}}</td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+</div>
