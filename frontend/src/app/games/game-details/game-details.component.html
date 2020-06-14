@@ -1,31 +1,56 @@
-<div class = "body">
-  <div class = "left-div">
+<!DOCTYPE html>
+<html lang="en">
 
-  </div>
-  <div class = "right-div">
-    <div class = "left">
-      <div class = "run">
+<head>
+  <meta charset="UTF-8">
+  <title>SimpleBlockly</title>
 
-      </div>
-      <div class = "gameUI">
 
-      </div>
-    </div>
-    <div class = "right">
-      <div class = "help">
-        <h2>热线求助</h2>
-        <p>如果您在游玩过程中遇到了困难，您可以通过视频连线向同学或老师寻求帮助，您只需要点击下方按钮随机生成一个房间号，并让对方输入该房间号，即可开始视频。</p>
-        <button>开房间</button> 房间号：<br>
-        <button>进房间</button> <input>
-      </div>
-      <div class = "my-camera">
 
-      </div>
-      <div class = "helper-camera">
 
-      </div>
+</head>
 
-    </div>
-  </div>
-
+<body>
+<!-- 1.先定义页面的html -->
+<div id="blocklyDiv" style="float:left;height: 480px;width:600px;">
 </div>
+<div id="display" style="float:left;border:3px solid #F00;height: 480px;width:600px;">
+  <div style="float:left;border:3px solid #000;margin-left:50px;margin-top:50px;height: 300px;width:50px;">
+    <img  id="a" src="../../assets/game/a.png" style="position:relative;left:10px;top:10px">
+    <img  id="b" src="../../assets/game/b.png" style="position:relative;left:10px;top:30px">
+    <img  id="c" src="../../assets/game/c.png" style="position:relative;left:10px;top:50px">
+  </div>
+
+
+  <div style="float:right;border:3px solid #000;margin-right:50px;margin-top:50px;height: 300px;width:50px;">
+
+  </div>
+
+  <img id="people" src="../../assets/game/1.jpg" style="width:50px;height:50px;position:relative;left:150px;top:200px">
+</div>
+<!-- 2.定义xml文件 -->
+<!-- 用来定义工具栏-->
+<xml id="toolbox" style="display: none">
+  <category name="基本动作"  colour="%{BKY_PROCEDURES_HUE}">
+    <block type="stage1_get"></block>
+    <block type="stage1_set"></block>
+  </category>
+  <sep></sep>
+</xml>
+
+<video id="video" width="640" height="480" style="background:#000;" autoplay></video>
+<canvas   id="canvas" width="320" height="320"></canvas>
+<canvas  style="display:none" id="canvas_opponent" width="320" height="320"></canvas>
+<input type="text" id="roomid">
+<button (click)="start()">进入房间</button>
+
+
+
+
+
+
+<button  (click)="compile()">运行</button>
+<button  onclick="reset()">重置</button>
+
+</body>
+</html>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as $ from "jquery";
 
 @Component({
   selector: 'app-start',
@@ -14,6 +15,7 @@ export class StartComponent implements OnInit {
 
   ngOnInit() {
     this.login=Boolean(localStorage.getItem("login"));
+
   }
 
 }

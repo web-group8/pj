@@ -16,7 +16,11 @@ export class HeaderComponent implements OnInit {
   checkout(){
     alert("成功退出登录");
     localStorage.removeItem("login");
+      localStorage.removeItem("username");
       window.open('/','_self');
+  }
+  test(){
+      localStorage.setItem("login","true");
   }
 
 }

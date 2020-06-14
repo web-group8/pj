@@ -16,6 +16,8 @@ export class LoginComponent implements OnInit {
   }
   login(){
       var url="/login";
+      var ajax_this=this;
+      var name=this.username;
       var post_data={"username":this.username,"password":this.password};
       this.http.post(url,JSON.stringify(post_data),{headers:this.headers}).subscribe(function(data) {
           var temp = JSON.parse(data['_body']);
@@ -23,6 +25,7 @@ export class LoginComponent implements OnInit {
           var bol = temp['success'];
           localStorage.setItem("login", bol);
           if (bol) {
+              localStorage.setItem("username", ajax_this.username);
           window.open('/', '_self');
           }
           else{

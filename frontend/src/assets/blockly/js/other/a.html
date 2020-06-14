@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #canvas{
+            position: relative;
+            left: 90px;
+            top:20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="1200" height="600" id="canvas">
+    垃圾浏览器!
+</canvas>
+<script>
+    let canvas=document.getElementById("canvas");
+    let cxt=canvas.getContext("2d");
+    let left=100;
+    let top1=100;
+    cxt.fillRect(left,top1,30,30);
+  document.onkeypress=control;
+  function control(){
+   alert(event.keyCode);
+switch (event.keyCode){
+            case 97:
+                left=left-20;
+                cxt.clearRect(0,0,1200,600);
+                cxt.fillRect(left,top1,30,30);
+                break;
+            case 119:
+                top1=top1-20;
+                cxt.clearRect(0,0,1200,600);
+                cxt.fillRect(left,top1,30,30);
+                break;
+            case 100:
+                left=left+20;
+                cxt.clearRect(0,0,1200,600);
+                cxt.fillRect(left,top1,30,30);
+                break;
+            case 115:
+                top1=top1+20;
+                cxt.clearRect(0,0,1200,600);
+                cxt.fillRect(left,top1,30,30);
+                break;
+            default:alert(event.keyCode);
+        }
+   }
+
+</script>
+</body>
+</html>

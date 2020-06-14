@@ -25,7 +25,14 @@
             "styles": [
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "src/assets/blockly/js/blockly_compressed.js",
+              "src/assets/blockly/js/blocks_compressed.js",
+              "src/assets/blockly/js/category/zh-hans.js",
+              "src/assets/blockly/js/blocks/zh-hans.js",
+              "src/assets/game/game1.js",
+              "src/assets/blockly/js/javascript_compressed.js"
+            ]
           },
           "configurations": {
             "production": {

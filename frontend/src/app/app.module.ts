@@ -16,6 +16,7 @@ import { QuickStartComponent } from './quick-start/quick-start.component';
 import { GamesComponent } from './games/games.component';
 import { GameDetailsComponent } from './games/game-details/game-details.component';
 import { PersonalComponent } from './personal/personal.component';
+import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { PersonalComponent } from './personal/personal.component';
         { path: 'gamesList/:gameId', component: GameDetailsComponent }
     ])
   ],
+    schemas: [NO_ERRORS_SCHEMA],
   providers: [],
   bootstrap: [AppComponent]
 })
