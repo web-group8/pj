@@ -5,7 +5,6 @@
   <meta charset="UTF-8">
   <title>game1</title>
 </head>
-<script src="src/assets/game/js/game1.js"></script>
 
 <body style="background-color: white;height: 1000px">
 <div id="page" style="width: 1900px;height: 700px;padding-top: 20px">
@@ -16,26 +15,13 @@
   <div id="gamePage" style="float: left;height: 700px;width:620px;text-align: center;">
     <div id="introduction" style="float: left;border:3px solid #ccc;height: 300px;width: 600px">
       <br><br><br>
-      <p1>收发室初级</p1>
-      <p>欢迎来到收发室！现在你需要完成一个任务</p>
-      <p>你需要把<strong>接收处</strong>的信件依次放到<strong>发放处</strong></p>
-      <br><br>
-      <button (click)="compile()">运行</button>
+      <p1>绿野仙踪</p1>
+      <p>欢迎来到3D世界！现在你需要帮助小白走去迷宫</p>
+      <p>你需要将地图的<strong>所有红砖</strong>全部踩过才能到达<strong>出口</strong></p>
+      <p>如果你<strong>掉进湖里</strong>，那么你将<strong>挑战失败</strong></p>
+      <br>
+      <button onclick="compile()">运行</button>
       <button onclick="reset()">重置</button>
-    </div>
-    <div id="display" style="float:left;border:3px solid #ccc;height: 480px;width:600px;margin-top: 5px">
-      <div style="float:left;border:3px solid #000;margin-left:50px;margin-top:50px;height: 300px;width:50px;">
-        <img id="a" src="../../assets/game/a.png" style="position:relative;left:10px;top:10px">
-        <img id="b" src="../../assets/game/b.png" style="position:relative;left:10px;top:30px">
-        <img id="c" src="../../assets/game/c.png" style="position:relative;left:10px;top:50px">
-      </div>
-
-      <div style="float:right;border:3px solid #000;margin-right:50px;margin-top:50px;height: 300px;width:50px;">
-
-      </div>
-
-      <img id="people" src="../../assets/game/1.jpg"
-           style="width:50px;height:50px;position:relative;left:150px;top:200px">
     </div>
   </div>
 
@@ -43,8 +29,32 @@
   <!-- 用来定义工具栏-->
   <xml id="toolbox" style="display: none">
     <category name="基本动作" colour="%{BKY_PROCEDURES_HUE}">
-      <block type="stage1_get"></block>
-      <block type="stage1_set"></block>
+      <block type="front"></block>
+      <block type="right"></block>
+      <block type="left"></block>
+    </category>
+    <sep></sep>
+
+
+    <category name="条件" colour="%{BKY_LOGIC_HUE}">
+      <block type="red_block"></block>
+      <block type="black_block"></block>
+    </category>
+    <sep></sep>
+
+
+    <category name="魔法动作" colour="%{BKY_LOOPS_HUE}">
+      <block type="controls_repeat_ext">
+        <value name="TIMES">
+          <block type="math_number">
+            <field name="NUM">0</field>
+          </block>
+        </value>
+      </block>
+
+      <block type="controls_ifelse">
+      </block>
+
     </category>
     <sep></sep>
   </xml>
@@ -56,7 +66,7 @@
       <p>您可以通过视频连线向同学或者老师求助</p>
       <p>您只需要<strong>输入房间号</strong>即可开始视频</p>
       <input type="text" id="roomid">
-      <button (click)="start()">进入房间</button>
+<!--      <button (click)="start()">进入房间</button>-->
       <br><br>
     </div>
     <div style="margin-top: 5px">

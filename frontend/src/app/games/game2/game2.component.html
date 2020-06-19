@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>game2</title>
+</head>
+
+<body style="background-color: white;height: 1000px">
+<div id="page" style="width: 1900px;height: 700px;padding-top: 20px">
+
+  <!-- 1.先定义页面的html -->
+  <div id="blocklyDiv" style="float:left;height: 700px;width:640px">
+  </div>
+  <div id="gamePage" style="float: left;height: 700px;width:620px;text-align: center;">
+    <div id="introduction" style="float: left;border:3px solid #ccc;height: 300px;width: 600px">
+      <br><br><br>
+      <p1>收发室高级</p1>
+      <p>欢迎再次来到收发室！现在你需要完成一个更艰难的任务</p>
+      <p>这次你发现了，这些信件的顺序被<strong>颠倒</strong>了</p>
+      <p>你需要借助<strong>办公桌</strong>来把它们排序好</p>
+      <br><br>
+      <button onclick="compile()">运行</button>
+      <button onclick="reset()">重置</button>
+    </div>
+    <div id="display" style="float:left;border:3px solid #ccc;height: 480px;width:600px;margin-top: 5px;position:relative">
+      <img id="people" src="../../assets/game/1.jpg" style="float:left;width:50px;height:50px;position:relative;left:300px;top:200px">
+      <div style="float:left;border:3px solid #000;margin-left:50px;margin-top:50px;height: 400px;width:50px;">
+        <img id="0" src="../../assets/game/f.png" style="position:relative;left:10px;top:10px">
+        <img id="1" src="../../assets/game/e.png" style="position:relative;left:10px;top:30px">
+        <img id="2" src="../../assets/game/o.png" style="position:relative;left:10px;top:50px">
+        <img id="3" src="../../assets/game/f.png" style="position:relative;left:10px;top:70px">
+        <img id="4" src="../../assets/game/t.png" style="position:relative;left:10px;top:90px">
+        <img id="5" src="../../assets/game/r.png" style="position:relative;left:10px;top:110px">
+      </div>
+
+      <div style="float:left;border:3px solid #000;margin-left:142px;height: 50px;width:50px;">
+
+      </div>
+
+
+      <div style="float:right;border:3px solid #000;margin-right:50px;margin-top:50px;height: 400px;width:50px;">
+
+      </div>
+  </div>
+
+  <!-- 2.定义xml文件 -->
+  <!-- 用来定义工具栏-->
+  <category name="基本动作" colour="%{BKY_PROCEDURES_HUE}">
+    <block type="stage1_get"></block>
+    <block type="stage1_set"></block>
+    <block type="get_desk"></block>
+    <block type="set_desk"></block>
+  </category>
+  <sep></sep>
+
+
+  <category name="魔法动作" colour="%{BKY_LOOPS_HUE}">
+    <block type="controls_repeat_ext">
+      <value name="TIMES">
+        <block type="math_number">
+          <field name="NUM">0</field>
+        </block>
+      </value>
+    </block>
+  </category>
+  <sep></sep>
+  <div style="float: left;height: 700px;width:640px;text-align: center;">
+    <div style="border:3px solid #ccc">
+      <br><br>
+      <p1>热线求助</p1>
+      <p>如果您在游玩的过程中遇到了困难</p>
+      <p>您可以通过视频连线向同学或者老师求助</p>
+      <p>您只需要<strong>输入房间号</strong>即可开始视频</p>
+      <input type="text" id="roomid">
+<!--      <button (click)="start()">进入房间</button>-->
+      <br><br>
+    </div>
+    <div style="margin-top: 5px">
+      <video id="video" width="640" height="700" style="background:#000;" autoplay></video>
+      <canvas id="canvas" width="640" height="350"></canvas>
+      <canvas style="display:none" id="canvas_opponent" width="640" height="350"></canvas>
+    </div>
+  </div>
+
+
+</div>
+</div>
+</body>
+</html>

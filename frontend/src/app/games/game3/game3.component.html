@@ -3,48 +3,62 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>game1</title>
+  <title>game3</title>
 </head>
-<script src="src/assets/game/js/game1.js"></script>
 
 <body style="background-color: white;height: 1000px">
 <div id="page" style="width: 1900px;height: 700px;padding-top: 20px">
-
   <!-- 1.先定义页面的html -->
   <div id="blocklyDiv" style="float:left;height: 700px;width:640px">
   </div>
   <div id="gamePage" style="float: left;height: 700px;width:620px;text-align: center;">
     <div id="introduction" style="float: left;border:3px solid #ccc;height: 300px;width: 600px">
       <br><br><br>
-      <p1>收发室初级</p1>
-      <p>欢迎来到收发室！现在你需要完成一个任务</p>
-      <p>你需要把<strong>接收处</strong>的信件依次放到<strong>发放处</strong></p>
-      <br><br>
-      <button (click)="compile()">运行</button>
+      <p1>十倍放大镜</p1>
+      <p>这次你需要帮助你的同事</p>
+      <p>由于你同事的粗心大意，信件中的数字只有<strong>十分之一</strong>了</p>
+      <p>你需要将数字<strong>放大十倍</strong>，然后帮它们放在发放处</p>
+      <button onclick="compile()">运行</button>
       <button onclick="reset()">重置</button>
+      <br><br>
     </div>
     <div id="display" style="float:left;border:3px solid #ccc;height: 480px;width:600px;margin-top: 5px">
-      <div style="float:left;border:3px solid #000;margin-left:50px;margin-top:50px;height: 300px;width:50px;">
-        <img id="a" src="../../assets/game/a.png" style="position:relative;left:10px;top:10px">
-        <img id="b" src="../../assets/game/b.png" style="position:relative;left:10px;top:30px">
-        <img id="c" src="../../assets/game/c.png" style="position:relative;left:10px;top:50px">
+      <!-- 左边桌子上的三个字母图块-->
+      <div id="part1">
+        <p id="pt1num1" class="pt1nums">9</p>
+        <p id="pt1num2" class="pt1nums">5</p>
+        <p id="pt1num3" class="pt1nums">7</p>
+        <p id="pt1num4" class="pt1nums">6</p>
       </div>
-
-      <div style="float:right;border:3px solid #000;margin-right:50px;margin-top:50px;height: 300px;width:50px;">
-
+      <!--中间两格桌子-->
+      <div id="part2">
+        <p id="pt2num1" class="pt2nums"></p>
+        <p id="pt2num2" class="pt2nums"></p>
       </div>
-
-      <img id="people" src="../../assets/game/1.jpg"
-           style="width:50px;height:50px;position:relative;left:150px;top:200px">
-    </div>
+      <!-- 右边桌子，一开始没有任何图块-->
+      <div id="part3">
+        <p id="pt3num1" class="pt3nums"></p>
+        <p id="pt3num2" class="pt3nums"></p>
+        <p id="pt3num3" class="pt3nums"></p>
+        <p id="pt3num4" class="pt3nums"></p>
+      </div>
+      <!-- 人物图标-->
+      <p id="pwblock"></p>
+      <img id="people" src="1.jpg" style="width:50px;height:50px;position:relative;left:150px;top:200px;">
   </div>
 
   <!-- 2.定义xml文件 -->
   <!-- 用来定义工具栏-->
   <xml id="toolbox" style="display: none">
-    <category name="基本动作" colour="%{BKY_PROCEDURES_HUE}">
+    <category name="基本动作"  colour="%{BKY_PROCEDURES_HUE}">                                                     <!-- 左侧可选块栏目-->
       <block type="stage1_get"></block>
       <block type="stage1_set"></block>
+      <block type="step1_down_2"></block>
+      <block type="step1_write"></block>
+      <block type="step1_add"></block>
+    </category>
+    <category name="魔法动作"  colour="%{BKY_LISTS_HUE}">
+      <block type="step2_repeat"></block>
     </category>
     <sep></sep>
   </xml>
@@ -56,7 +70,7 @@
       <p>您可以通过视频连线向同学或者老师求助</p>
       <p>您只需要<strong>输入房间号</strong>即可开始视频</p>
       <input type="text" id="roomid">
-      <button (click)="start()">进入房间</button>
+<!--      <button (click)="start()">进入房间</button>-->
       <br><br>
     </div>
     <div style="margin-top: 5px">
@@ -67,6 +81,7 @@
   </div>
 
 
+</div>
 </div>
 </body>
 </html>

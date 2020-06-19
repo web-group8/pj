@@ -5,11 +5,41 @@
     <th>游戏类型</th>
     <th>难度</th>
   </tr>
-  <tr *ngFor="let game of games; index as gameId" [routerLink]="['/gamesList',gameId]" [title] = "game.name">
-    <td>{{game.id}}</td>
-    <td>{{game.name}}</td>
-    <td>{{game.type}}</td>
-    <td>{{game.difficulty}}</td>
+  <tr [routerLink]="['/gamesList/game1']">
+    <td>1</td>
+    <td>收发室初级</td>
+    <td>2D</td>
+    <td>简单</td>
+  </tr>
+  <tr [routerLink]="['/gamesList/game2']">
+    <td>2</td>
+    <td>收发室高级</td>
+    <td>2D</td>
+    <td>中等</td>
+  </tr>
+  <tr [routerLink]="['/gamesList/game3']">
+    <td>3</td>
+    <td>十倍放大镜</td>
+    <td>2D</td>
+    <td>中等</td>
+  </tr>
+  <tr [routerLink]="['/gamesList/game4']">
+    <td>4</td>
+    <td>绿野仙踪</td>
+    <td>3D</td>
+    <td>困难</td>
+  </tr>
+  <tr [routerLink]="['/gamesList/game5']">
+    <td>5</td>
+    <td>小洛快跑</td>
+    <td>3D</td>
+    <td>中等</td>
+  </tr>
+  <tr [routerLink]="['/gamesList/game6']">
+    <td>6</td>
+    <td>对称谜题</td>
+    <td>3D</td>
+    <td>中等</td>
   </tr>
 </table>
 

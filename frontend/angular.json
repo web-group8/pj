@@ -30,7 +30,12 @@
               "src/assets/blockly/js/blocks_compressed.js",
               "src/assets/blockly/js/category/zh-hans.js",
               "src/assets/blockly/js/blocks/zh-hans.js",
-              "src/assets/game/game1.js",
+              "src/assets/game/js/game1.js",
+              "src/assets/game/js/game2.js",
+              "src/assets/game/js/game3.js",
+              "src/assets/game/js/game4.js",
+              "src/assets/game/js/game5.js",
+              "src/assets/game/js/game6.js",
               "src/assets/blockly/js/javascript_compressed.js"
             ]
           },

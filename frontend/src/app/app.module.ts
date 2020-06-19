@@ -17,6 +17,12 @@ import { GamesComponent } from './games/games.component';
 import { GameDetailsComponent } from './games/game-details/game-details.component';
 import { PersonalComponent } from './personal/personal.component';
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import { Game1Component } from './games/game1/game1.component';
+import { Game2Component } from './games/game2/game2.component';
+import { Game3Component } from './games/game3/game3.component';
+import { Game4Component } from './games/game4/game4.component';
+import { Game5Component } from './games/game5/game5.component';
+import { Game6Component } from './games/game6/game6.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +36,13 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
     QuickStartComponent,
     GamesComponent,
     GameDetailsComponent,
-    PersonalComponent
+    PersonalComponent,
+    Game1Component,
+    Game2Component,
+    Game3Component,
+    Game4Component,
+    Game5Component,
+    Game6Component
   ],
   imports: [
       HttpModule,
@@ -47,7 +59,12 @@ import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
         { path: 'quickStart', component: QuickStartComponent },
         { path: 'personalpage', component: PersonalComponent },
         { path: 'gamesList', component: GamesComponent },
-        { path: 'gamesList/:gameId', component: GameDetailsComponent }
+        { path: 'gamesList/game1', component: Game1Component },
+        { path: 'gamesList/game2', component: Game2Component },
+        { path: 'gamesList/game3', component: Game3Component },
+        { path: 'gamesList/game4', component: Game4Component },
+        { path: 'gamesList/game5', component: Game5Component },
+        { path: 'gamesList/game6', component: Game6Component }
     ])
   ],
     schemas: [NO_ERRORS_SCHEMA],
