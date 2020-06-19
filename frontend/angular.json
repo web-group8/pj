@@ -36,7 +36,10 @@
               "src/assets/game/js/game4.js",
               "src/assets/game/js/game5.js",
               "src/assets/game/js/game6.js",
-              "src/assets/blockly/js/javascript_compressed.js"
+              "src/assets/blockly/js/javascript_compressed.js",
+              "src/assets/blockly/js/three.js",
+              "src/assets/blockly/js/three.module.js",
+              "src/assets/blockly/js/FirstPersonControls.js"
             ]
           },
           "configurations": {
