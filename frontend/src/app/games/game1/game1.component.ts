@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core'
 import { DebugElement, NO_ERRORS_SCHEMA } from '@angular/core';
+import {compile,reset,set} from './game1'
+// import {conn} from './viewer'
 
 @Component({
     selector: 'app-game1',
@@ -13,6 +15,7 @@ export class Game1Component implements OnInit {
     }
 
     ngOnInit() {
+
         this.workspace = Blockly.inject('blocklyDiv', {
             media: '../../assets/blockly/media/',
             toolbox: document.getElementById('toolbox'),
@@ -32,8 +35,12 @@ export class Game1Component implements OnInit {
             trashcan: true
         });
 
-        Blockly.Blocks['stage1_get'] = {
-            init: function () {
+        // set(this.workspace);
+
+
+
+        Blockly.Blocks['stage1_get']={
+            init:function(){
                 this.appendDummyInput().appendField("从左边拿取排在第一的邮件");
                 this.setPreviousStatement(true);
                 this.setNextStatement(true);
@@ -44,13 +51,17 @@ export class Game1Component implements OnInit {
         };
 
 
-        Blockly.JavaScript['stage1_get'] = function (block) {
-            var code = 'move_to_pick();\n'
+
+
+
+        Blockly.JavaScript['stage1_get']=function(block){
+            var code='move_to_pick();\n'
             return code;
         };
 
-        Blockly.Blocks['stage1_set'] = {
-            init: function () {
+
+        Blockly.Blocks['stage1_set']={
+            init:function(){
                 this.appendDummyInput().appendField("将拿到的邮件放在右边");
                 this.setPreviousStatement(true);
                 this.setNextStatement(true);
@@ -61,20 +72,22 @@ export class Game1Component implements OnInit {
         };
 
 
-        Blockly.JavaScript['stage1_set'] = function (block) {
-            var code = 'move_to_down();\n'
+
+
+
+        Blockly.JavaScript['stage1_set']=function(block){
+            var code='move_to_down();\n'
             return code;
         };
-
     }
 
 
-    compile() {
-        clear();
-        var code = Blockly.JavaScript.workspaceToCode(this.workspace);
-        code = code + "check();\n";
-        //  alert(code);
-        eval(code);
+
+    run(){
+        compile()
+    }
+    clear(){
+        reset()
     }
 
     start() {

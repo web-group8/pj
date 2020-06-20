@@ -59,7 +59,7 @@ import { Game6Component } from './games/game6/game6.component';
         { path: 'quickStart', component: QuickStartComponent },
         { path: 'personalpage', component: PersonalComponent },
         { path: 'gamesList', component: GamesComponent },
-        { path: 'gamesList/game1', component: Game1Component },
+        { path: 'gamesList/game1', component: GameDetailsComponent },
         { path: 'gamesList/game2', component: Game2Component },
         { path: 'gamesList/game3', component: Game3Component },
         { path: 'gamesList/game4', component: Game4Component },

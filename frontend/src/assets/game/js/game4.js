@@ -32,9 +32,17 @@ camera.lookAt(new THREE.Vector3(30, 0, 30));
 
 scene.add(camera);
 
-const renderer = new THREE.WebGLRenderer({antialias: true, alpha: true});
-renderer.setSize(400, 400);
-document.body.appendChild(renderer.domElement);
+function init() {
+    renderer = new THREE.WebGLRenderer({
+        canvas: document.getElementById('webglCanvas'),
+        antialias: true,
+        alpha: true
+    });
+    renderer.setSize(400, 400);
+    document.body.appendChild(renderer.domElement);
+}
+
+
 
 
 const light = new THREE.AmbientLight(0xaaaaaa);
@@ -153,8 +161,7 @@ function compile() {
 
 
 function main() {
-
-
+    init();
     for (var i = 0; i < play_map.length; i++) {
         for (var j = 0; j < play_map[i].length; j++) {
             switch (play_map[i][j]) {

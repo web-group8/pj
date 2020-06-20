@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <title>game1</title>
-</head>
+
+
+<div class="header">
+
+  <button [routerLink]="['/loginpage']">点击登录</button>
+  <button [routerLink]="['/registpage']">点击注册</button>
+  <button (click)="test()">测试</button>
+</div>
 
 <body style="background-color: white;height: 1000px">
 <div id="page" style="width: 1900px;height: 700px;padding-top: 20px">
@@ -12,6 +14,7 @@
   <!-- 1.先定义页面的html -->
   <div id="blocklyDiv" style="float:left;height: 700px;width:640px">
   </div>
+  <canvas id="test"></canvas>
   <div id="gamePage" style="float: left;height: 700px;width:620px;text-align: center;">
     <div id="introduction" style="float: left;border:3px solid #ccc;height: 300px;width: 600px">
       <br><br><br>
@@ -66,7 +69,7 @@
       <p>您可以通过视频连线向同学或者老师求助</p>
       <p>您只需要<strong>输入房间号</strong>即可开始视频</p>
       <input type="text" id="roomid">
-<!--      <button (click)="start()">进入房间</button>-->
+      <button (click)="start()">进入房间</button>
       <br><br>
     </div>
     <div style="margin-top: 5px">
@@ -79,4 +82,3 @@
 
 </div>
 </body>
-</html>

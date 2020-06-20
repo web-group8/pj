@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {main} from './game4'
 
 @Component({
     selector: 'app-game4',
@@ -12,6 +13,13 @@ export class Game4Component implements OnInit {
     }
 
     ngOnInit() {
+        var canvas = <HTMLCanvasElement>document.getElementById("test");
+
+        canvas.style.width = "400px";
+        canvas.style.height = "400px";
+        canvas.style.background = "#000";
+        main();
+
         this.workspace = Blockly.inject('blocklyDiv', {
             media: 'media/',
             toolbox: document.getElementById('toolbox'),
@@ -120,58 +128,60 @@ export class Game4Component implements OnInit {
 
             return [code, Blockly.JavaScript.ORDER_EQUALITY];
         };
-
-        //     start()
-        //     {
-        //         var video = <HTMLVideoElement>document.getElementById("video");
-        //         var canvas = <HTMLCanvasElement>document.getElementById("canvas"),
-        //             context = canvas.getContext("2d");
-        //         var canvas_opponent = <HTMLCanvasElement>document.getElementById("canvas_opponent"),
-        //             context_opponent = canvas_opponent.getContext("2d");
-        //         var roomid = (<HTMLInputElement>document.getElementById("roomid")).value;
-        //
-        //         var getUserMedia = window.navigator['getUserMedia'] || window.navigator['webkitGetUserMedia '] || window.navigator['mozGetUserMedia'] || window.navigator['msGetUserMedia'];
-        //         var options = ({
-        //             "video": true,
-        //             "audio": true
-        //         });
-        //         var host = 'localhost';
-        //         var port = 8888;
-        //         var url = 'ws://' + host + ':' + port + '/';
-        //         var w;
-        //         getUserMedia.call(navigator, options, function (stream) {
-        //             video.srcObject = stream;
-        //             video.play();
-        //             w = new WebSocket(url);
-        //             w.onopen = function () {
-        //
-        //                 var data = {
-        //                     "type": "init",
-        //                     "roomid": roomid
-        //                 }
-        //                 w.send(JSON.stringify(data));
-        //                 sendImg();
-        //             }
-        //             w.onmessage = function (e) {
-        //                 console.log(e);
-        //                 sendImg();
-        //             }
-        //         }, function () {
-        //             console.log("video error");
-        //         });
-        //
-        //         function sendImg() {
-        //             context.drawImage(video, 0, 0, 320, 320);
-        //             var imgData = canvas.toDataURL();
-        //             var data = {
-        //                 msg: imgData,
-        //                 roomid: roomid
-        //             }
-        //             w.send(JSON.stringify(data));
-        //         }
-        //     }
-        //
-        // }
     }
+
+            start()
+            {
+                var video = <HTMLVideoElement>document.getElementById("video");
+                var canvas = <HTMLCanvasElement>document.getElementById("canvas"),
+                    context = canvas.getContext("2d");
+                var canvas_opponent = <HTMLCanvasElement>document.getElementById("canvas_opponent"),
+                    context_opponent = canvas_opponent.getContext("2d");
+                var roomid = (<HTMLInputElement>document.getElementById("roomid")).value;
+
+                var getUserMedia = window.navigator['getUserMedia'] || window.navigator['webkitGetUserMedia '] || window.navigator['mozGetUserMedia'] || window.navigator['msGetUserMedia'];
+                var options = ({
+                    "video": true,
+                    "audio": true
+                });
+                var host = 'localhost';
+                var port = 8888;
+                var url = 'ws://' + host + ':' + port + '/';
+                var w;
+                getUserMedia.call(navigator, options, function (stream) {
+                    video.srcObject = stream;
+                    video.play();
+                    w = new WebSocket(url);
+                    w.onopen = function () {
+
+                        var data = {
+                            "type": "init",
+                            "roomid": roomid
+                        }
+                        w.send(JSON.stringify(data));
+                        sendImg();
+                    }
+                    w.onmessage = function (e) {
+                        console.log(e);
+                        sendImg();
+                    }
+                }, function () {
+                    console.log("video error");
+                });
+
+                function sendImg() {
+                    context.drawImage(video, 0, 0, 320, 320);
+                    var imgData = canvas.toDataURL();
+                    var data = {
+                        msg: imgData,
+                        roomid: roomid
+                    }
+                    w.send(JSON.stringify(data));
+                }
+            }
+
+
+
+
 
 }
